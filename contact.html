@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — InvadSafety</title>
+  <meta name="description" content="Contact the InvadSafety team with questions, corrections, or integration requests." />
+  <link rel="canonical" href="https://invadsafety.com/contact.html" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">🛡️ InvadSafety</a>
+    <nav>
+      <a href="index.html">Checker</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-section">
+    <h1>Contact</h1>
+    <p>Questions, corrections, or want to suggest a vendor to add? Send a note. We read everything, though replies may take a few days.</p>
+
+    <form class="contact-form" id="contact-form">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send message</button>
+      <p class="form-note" id="form-note">This demo form does not send data. Connect it to your backend or a form service to go live.</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> InvadSafety. For educational and administrative use.</p>
+    <p><a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("contact-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      document.getElementById("form-note").textContent =
+        "Thanks! This demo doesn't send messages yet — wire it to your backend to receive it.";
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
