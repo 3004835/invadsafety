@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — InvadSafety</title>
+  <meta name="description" content="Learn how InvadSafety checks URLs against school web filtering categories and why simulated results are clearly labeled." />
+  <link rel="canonical" href="https://invadsafety.com/about.html" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">🛡️ InvadSafety</a>
+    <nav>
+      <a href="index.html">Checker</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-section">
+    <h1>About InvadSafety</h1>
+    <p>InvadSafety helps schools, parents, and IT teams understand how a single URL lands in different web filtering ecosystems. Instead of guessing whether a link is "safe," you can see how major filtering vendors would categorize it — in one place.</p>
+
+    <h2>What the checker does</h2>
+    <p>You paste a URL. InvadSafety normalizes it to a domain and looks it up. Rows marked <strong>Live</strong> come from a real DNSFilter domain lookup API call. Every other row is <strong>simulated</strong>: we map the known category onto that vendor's naming scheme, then mark it allowed or blocked using a simple school-policy rule set.</p>
+
+    <h2>Why simulated results are labeled</h2>
+    <p>Most filtering vendors do not publish a public "what category is this URL" API. Their lookup tools live inside admin consoles or firewall CLIs. Rather than pretend we can query them all, we show what a plausible result would look like and tell you it's simulated. Transparency matters more than a long list of fake checkmarks.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't store the URLs you check.</li>
+      <li>We don't call a vendor's API without disclosure.</li>
+      <li>We don't claim simulated results are authoritative.</li>
+    </ul>
+
+    <h2>Who it's for</h2>
+    <p>District IT administrators comparing filter behavior, teachers checking a resource before assigning it, and parents who want a second opinion on a link.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> InvadSafety. For educational and administrative use.</p>
+    <p><a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
